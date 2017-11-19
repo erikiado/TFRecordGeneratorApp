@@ -1,0 +1,8 @@
+MANIFEST.in
+tfd_server/__init__.py
+tfd_server/tfd_server.py
+tfd_server.egg-info/PKG-INFO
+tfd_server.egg-info/SOURCES.txt
+tfd_server.egg-info/dependency_links.txt
+tfd_server.egg-info/requires.txt
+tfd_server.egg-info/top_level.txt

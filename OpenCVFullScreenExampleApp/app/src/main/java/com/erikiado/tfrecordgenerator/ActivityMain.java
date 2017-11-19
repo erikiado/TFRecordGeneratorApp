@@ -50,7 +50,6 @@ public class ActivityMain extends AppCompatActivity implements CameraBridgeViewB
     private String className;
     private Button classNameButton;
     private Context context;
-    private int cont;
 //    Scalar RED = new Scalar(255, 0, 0);
 //    Scalar GREEN = new Scalar(0, 255, 0);
 //    FeatureDetector detector;
@@ -125,7 +124,6 @@ public class ActivityMain extends AppCompatActivity implements CameraBridgeViewB
         xPreTouch = 0;
         yPreTouch = 0;
         last = false;
-        cont = 0;
         className = "Clase Prueba";
         tvName.setText(className);
         classNameButton.setText(className);
@@ -206,26 +204,20 @@ public class ActivityMain extends AppCompatActivity implements CameraBridgeViewB
 //
         int xRectLeftUp, yRectLeftUp;
         int xRectRightDown, yRectRightDown;
-
-        if(cont == 0){
-            if(last){
-                xRectLeftUp = xLastTouch;
-                yRectLeftUp = yLastTouch;
-                xRectRightDown = xPreTouch;
-                yRectRightDown = yPreTouch;
-            }else{
-                xRectLeftUp = xPreTouch;
-                yRectLeftUp = yPreTouch;
-                xRectRightDown = xLastTouch;
-                yRectRightDown = yLastTouch;
-            }
-            Imgproc.rectangle(mRgba,new Point(xRectLeftUp,yRectLeftUp),new Point(xRectRightDown,yRectRightDown),new Scalar(0,255,0),4);
+        if(last){
+            xRectLeftUp = xLastTouch;
+            yRectLeftUp = yLastTouch;
+            xRectRightDown = xPreTouch;
+            yRectRightDown = yPreTouch;
+        }else{
+            xRectLeftUp = xPreTouch;
+            yRectLeftUp = yPreTouch;
+            xRectRightDown = xLastTouch;
+            yRectRightDown = yLastTouch;
         }
-
-        cont++;
-        cont = cont % 3;
-//        Imgproc.GaussianBlur(mRgba,mRgba,new Size(11,11),0);
-//        Imgproc.cvtColor(mRgba,mRgba,Imgproc.COLOR_BGR2HSV);
+        Imgproc.rectangle(mRgba,new Point(xRectLeftUp,yRectLeftUp),new Point(xRectRightDown,yRectRightDown),new Scalar(0,255,0),4);
+        Imgproc.GaussianBlur(mRgba,mRgba,new Size(11,11),0);
+        Imgproc.cvtColor(mRgba,mRgba,Imgproc.COLOR_BGR2HSV);
         return mRgba;
 
     }

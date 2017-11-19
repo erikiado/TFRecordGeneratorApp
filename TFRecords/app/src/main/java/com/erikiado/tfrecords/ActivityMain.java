@@ -1,10 +1,7 @@
-package com.erikiado.tfrecordgenerator;
+package com.erikiado.tfrecords;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,21 +19,12 @@ import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
-import org.opencv.android.Utils;
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
-import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.core.MatOfKeyPoint;
 import org.opencv.core.Scalar;
-import org.opencv.features2d.DescriptorExtractor;
-import org.opencv.features2d.DescriptorMatcher;
-import org.opencv.features2d.FeatureDetector;
-import org.opencv.imgproc.Imgproc;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 public class ActivityMain extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2  {
 
@@ -207,7 +195,7 @@ public class ActivityMain extends AppCompatActivity implements CameraBridgeViewB
         int xRectLeftUp, yRectLeftUp;
         int xRectRightDown, yRectRightDown;
 
-        if(cont == 0){
+        if(cont != 0){
             if(last){
                 xRectLeftUp = xLastTouch;
                 yRectLeftUp = yLastTouch;
