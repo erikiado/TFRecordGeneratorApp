@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context="com.erikiado.tfrecords.ActivityClassGallery">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="IMG"
+        android:textSize="22dp"
+        android:textColor="@color/colorAccent"/>
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="115dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center" />
+
+</android.support.constraint.ConstraintLayout>
